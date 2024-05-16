@@ -5,7 +5,7 @@ function App() {
   const [city,setCity] = useState('');
   const [data,setData] = useState(null)
 
-  const url = `http://localhost:5000/weather?city=${city}`
+  const url = `https://weatherapp-api-production.up.railway.app/weather?city=${city}`
   const today = new Date()
 
   const searchCity = async (event) => {
