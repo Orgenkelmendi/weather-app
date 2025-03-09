@@ -5,7 +5,8 @@ function App() {
   const [city,setCity] = useState('');
   const [data,setData] = useState(null)
 
-  const url = `https://weatherapp-api-production.up.railway.app/weather?city=${city}`
+  // const url = `https://weatherapp-api-production.up.railway.app/weather?city=${city}`
+  const url = `http://localhost:5001/weather?city=${city}`
   const today = new Date()
 
   const searchCity = async (event) => {
@@ -36,7 +37,7 @@ function App() {
       </div>
       <div className='date'>
         {data ? <h4>{`${data.name}, ${data.sys.country}`}</h4> : null}
-        {data ? <p>{`${today.getMonth()} / ${today.getDate()} / ${today.getFullYear()}`}</p> : null}
+        {data ? <p>{`${today.getMonth()+1} / ${today.getDate()} / ${today.getFullYear()}`}</p> : null}
       </div>
       <div className='weather'>
         {data ? <h2>{(data.main.temp).toFixed()} °F <span> {data.weather[0].main}</span></h2> : null}
